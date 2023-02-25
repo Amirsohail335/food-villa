@@ -1,9 +1,19 @@
 import "./App.css";
+import React from "react";
+
+const Tittle = () => {
+  return (
+    <div>
+      <h1>Food Villa</h1>
+    </div>
+  );
+};
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <Tittle />
+      <h2>Namaste React functional component</h2>
     </div>
   );
 }
