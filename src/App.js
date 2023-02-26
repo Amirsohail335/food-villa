@@ -13,7 +13,7 @@ const Tittle = () => {
   );
 };
 
-function App() {
+const Header = () => {
   return (
     <div className="header">
       <Tittle />
@@ -30,21 +30,37 @@ function App() {
 }
 
 const Body = () => {
-  return <h4>Body</h4>;
+  return (
+    <div>
+      <RestrauntCard/>
+    </div>
+  )
 };
 
 const Footer = () => {
   return <h4>Footer</h4>;
 };
 
+const RestrauntCard = () => {
+  return(
+    <div className="card">
+      <img className="burger" alt="big-burger" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/ni4jj1hlo4zt7i3ioaow"/>
+      <h2>Burgur King</h2>
+      <h3>Burger American</h3>
+      <h4>4.2 stars</h4>
+    </div>
+  )
+}
+
+
 const AppLayout = () => {
   return (
     <React.Fragment>
-      {/* <Header /> */}
+      <Header />
       <Body />
       <Footer />
     </React.Fragment>
   );
 };
 
-export default App;
+export default AppLayout;

@@ -17,3 +17,12 @@
 .logo {
   width: 100px;
 }
+
+.card {
+  width: 200px;
+   
+}
+
+.card > img {
+  width: 100%;
+}
