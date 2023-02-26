@@ -29,4 +29,22 @@ function App() {
   );
 }
 
+const Body = () => {
+  return <h4>Body</h4>;
+};
+
+const Footer = () => {
+  return <h4>Footer</h4>;
+};
+
+const AppLayout = () => {
+  return (
+    <React.Fragment>
+      {/* <Header /> */}
+      <Body />
+      <Footer />
+    </React.Fragment>
+  );
+};
+
 export default App;
