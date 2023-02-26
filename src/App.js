@@ -4,16 +4,27 @@ import React from "react";
 const Tittle = () => {
   return (
     <div>
-      <h1>Food Villa</h1>
+      <img
+        className="logo"
+        alt="logo"
+        src="https://tse1.mm.bing.net/th?id=OIP.CyhSuKiv6ThPyd8kdBwNhQHaHa&pid=Api&P=0"
+      />
     </div>
   );
 };
 
 function App() {
   return (
-    <div className="App">
+    <div className="header">
       <Tittle />
-      <h2>Namaste React functional component</h2>
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Contact</li>
+          <li>Cart</li>
+        </ul>
+      </div>
     </div>
   );
 }
