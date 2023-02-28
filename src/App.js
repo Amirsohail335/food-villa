@@ -1,5 +1,6 @@
 import "./App.css";
 import React from "react";
+import { ReactDOM } from "react-dom/client";
 
 const Tittle = () => {
   return (
@@ -1057,16 +1058,33 @@ const restrauntList = [
   },
 ];
 
+const RestrauntCard = ({
+  name,
+  cuisines,
+  cloudinaryImageId,
+  lastMileTravel,
+}) => {
+  return (
+    <div className="card">
+      <img
+        src={
+          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
+          cloudinaryImageId
+        }
+      />
+      <h2>{name}</h2>
+      <h3>{cuisines.join(" ")}</h3>
+      <h4>{lastMileTravel} minutes</h4>
+    </div>
+  );
+};
+
 const Body = () => {
   return (
     <div className="restaurant-list">
-      <RestrauntCard restaurant={restrauntList[0]} />
-      <RestrauntCard restaurant={restrauntList[1]} />
-      <RestrauntCard restaurant={restrauntList[2]} />
-      <RestrauntCard restaurant={restrauntList[3]} />
-      <RestrauntCard restaurant={restrauntList[4]} />
-      <RestrauntCard restaurant={restrauntList[5]} />
-      <RestrauntCard restaurant={restrauntList[6]} />
+      {restrauntList.map((restaurant) => {
+        return <RestrauntCard {...restaurant.data} key={restaurant.data.id} />;
+      })}
     </div>
   );
 };
@@ -1075,22 +1093,15 @@ const Footer = () => {
   return <h4>Footer</h4>;
 };
 
-const RestrauntCard = ({restaurant}) => {
-  // console.log(props);
-  return (
-    <div className="card">
-      <img
-        src={
-          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
-          restaurant.data?.cloudinaryImageId
-        }
-      />
-      <h2>{restaurant.data?.name}</h2>
-      <h3>{restaurant.data?.cuisines.join(" ")}</h3>
-      <h4>{restaurant.data?.lastMileTravel} minutes</h4>
-    </div>
-  );
-};
+// const RestrauntList = () => {
+//   return (
+//     <div className="restaurant-list">
+//       {restaurantList.map((restaurant) => {
+//         return <RestaurantCard {...restaurant.data} key={restaurant.data.id} />;
+//       })}
+//     </div>
+//   );
+// };
 
 const AppLayout = () => {
   return (
@@ -1098,7 +1109,7 @@ const AppLayout = () => {
       <Header />
       <Body />
       <Footer />
-      {/* <RestrauntCard/> */}
+      {/* <RestrauntList /> */}
     </React.Fragment>
   );
 };
