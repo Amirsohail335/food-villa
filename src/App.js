@@ -66,33 +66,6 @@ const restrauntList = [
   //   rating: "4.2",
   // },
   // {
-  //   name: "Burger King",
-  //   image:
-  //     "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/ni4jj1hlo4zt7i3ioaow",
-  //   cusines: ["Burger", "American"],
-  //   rating: "4.2",
-  // },
-  // {
-  //   name: "Burger King",
-  //   image:
-  //     "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/ni4jj1hlo4zt7i3ioaow",
-  //   cusines: ["Burger", "American"],
-  //   rating: "4.2",
-  // },
-  // {
-  //   name: "Burger King",
-  //   image:
-  //     "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/ni4jj1hlo4zt7i3ioaow",
-  //   cusines: ["Burger", "American"],
-  //   rating: "4.2",
-  // },
-  // {
-  //   name: "Burger King",
-  //   image:
-  //     "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/ni4jj1hlo4zt7i3ioaow",
-  //   cusines: ["Burger", "American"],
-  //   rating: "4.2",
-  // },
 
   {
     type: "restaurant",
@@ -1087,13 +1060,16 @@ const restrauntList = [
 const Body = () => {
   return (
     <div className="restaurant-list">
-      <RestrauntCard />
-      <RestrauntCard />
-      <RestrauntCard />
-      <RestrauntCard />
-      <RestrauntCard />
-      <RestrauntCard />
-      <RestrauntCard />
+      <RestrauntCard restaurant={restrauntList[0]} />
+      <RestrauntCard restaurant={restrauntList[1]} />
+      <RestrauntCard restaurant={restrauntList[2]} />
+      <RestrauntCard restaurant={restrauntList[3]} />
+      <RestrauntCard restaurant={restrauntList[4]} />
+      <RestrauntCard restaurant={restrauntList[5]} />
+      <RestrauntCard restaurant={restrauntList[6]} />
+      <RestrauntCard restaurant={restrauntList[7]} />
+      <RestrauntCard restaurant={restrauntList[8]} />
+      <RestrauntCard restaurant={restrauntList[9]} />
     </div>
   );
 };
@@ -1102,13 +1078,19 @@ const Footer = () => {
   return <h4>Footer</h4>;
 };
 
-const RestrauntCard = () => {
+const RestrauntCard = (props) => {
+  console.log(props);
   return (
     <div className="card">
-      {/* <img src={burgerKing.image} /> */}
-      <h2>{restrauntList[0].data?.name}</h2>
-      <h3>{restrauntList[0].data?.cuisines.join(" ")}</h3>
-      <h4>{restrauntList[0].data?.lastMileTravel} minutes</h4>
+      <img
+        src={
+          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
+          props.restaurant.data?.cloudinaryImageId
+        }
+      />
+      <h2>{props.restauran.data?.name}</h2>
+      <h3>{props.restauran.data?.cuisines.join(" ")}</h3>
+      <h4>{props.restauran.data?.lastMileTravel} minutes</h4>
     </div>
   );
 };
