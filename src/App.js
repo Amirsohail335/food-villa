@@ -1067,9 +1067,6 @@ const Body = () => {
       <RestrauntCard restaurant={restrauntList[4]} />
       <RestrauntCard restaurant={restrauntList[5]} />
       <RestrauntCard restaurant={restrauntList[6]} />
-      <RestrauntCard restaurant={restrauntList[7]} />
-      <RestrauntCard restaurant={restrauntList[8]} />
-      <RestrauntCard restaurant={restrauntList[9]} />
     </div>
   );
 };
@@ -1078,19 +1075,19 @@ const Footer = () => {
   return <h4>Footer</h4>;
 };
 
-const RestrauntCard = (props) => {
-  console.log(props);
+const RestrauntCard = ({restaurant}) => {
+  // console.log(props);
   return (
     <div className="card">
       <img
         src={
           "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
-          props.restaurant.data?.cloudinaryImageId
+          restaurant.data?.cloudinaryImageId
         }
       />
-      <h2>{props.restauran.data?.name}</h2>
-      <h3>{props.restauran.data?.cuisines.join(" ")}</h3>
-      <h4>{props.restauran.data?.lastMileTravel} minutes</h4>
+      <h2>{restaurant.data?.name}</h2>
+      <h3>{restaurant.data?.cuisines.join(" ")}</h3>
+      <h4>{restaurant.data?.lastMileTravel} minutes</h4>
     </div>
   );
 };
@@ -1101,6 +1098,7 @@ const AppLayout = () => {
       <Header />
       <Body />
       <Footer />
+      {/* <RestrauntCard/> */}
     </React.Fragment>
   );
 };
