@@ -59,6 +59,7 @@
 import { restaurantList } from "../config";
 import RestrauntCard from "./RestrauntCard";
 import { useState , useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 function filteredRestaurants(searchText) {
   const data = restaurantList.filter((restaurant) => {
@@ -88,7 +89,9 @@ const Body = () => {
     setRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
 
-  return (
+  return restaurants.length === 0 ? (
+    <Shimmer/>
+  ) :     (
     <>
       <div className="search-container">
         <form action="" onSubmit={(e) => e.preventDefault()}>
