@@ -1,4 +1,5 @@
 import { useState , useEffect } from "react";
+import Logo from "../assets/foodvilla.png"
 
 const Title = () => {
   return (
@@ -6,7 +7,8 @@ const Title = () => {
       <img
         className="logo"
         alt="logo"
-        src="https://tse1.mm.bing.net/th?id=OIP.CyhSuKiv6ThPyd8kdBwNhQHaHa&pid=Api&P=0"
+        // src="https://tse1.mm.bing.net/th?id=OIP.CyhSuKiv6ThPyd8kdBwNhQHaHa&pid=Api&P=0"
+        src={Logo}
       />
     </div>
   );
