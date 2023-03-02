@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState , useEffect } from "react";
 
 const Title = () => {
   return (
@@ -13,12 +13,18 @@ const Title = () => {
 };
 
 const Header = () => {
-  const [title, setTitle] = useState("Food Villa");
+  // const [title, setTitle] = useState("Food Villa");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    console.log("useEffect");
+  }, []);
+
+  console.log("render")
+
   return (
     <div className="header">
       <Title />
-      {/* <button onClick={() => setTitle("Food House  ")}>Change Title</button> */}
-
       <div className="nav-items">
         <ul>
           <li>Home</li>
@@ -27,6 +33,11 @@ const Header = () => {
           <li>Cart</li>
         </ul>
       </div>
+      {isLoggedIn ? (
+        <button onClick={() => setIsLoggedIn(false)}>Logout</button>
+      ) : (
+        <button onClick={() => setIsLoggedIn(true)}>Login</button>
+      )}
     </div>
   );
 };

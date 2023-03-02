@@ -7,31 +7,31 @@ import Body from "./components/Body";
 import Footer from "./components/Footer";
 import RestrauntCard from "./components/RestrauntCard";
 
-const config = [
-  {
-    type: "carousal",
-    cards: [
-      {
-        offerName: "50% off",
-      },
-      {
-        offerName: "No Delivery Charge",
-      },
-    ],
-  },
+// const config = [
+//   {
+//     type: "carousal",
+//     cards: [
+//       {
+//         offerName: "50% off",
+//       },
+//       {
+//         offerName: "No Delivery Charge",
+//       },
+//     ],
+//   },
 
-  {
-    type: "restaurant",
-    cards: [
-      {
-        offerName: "50% off",
-      },
-      {
-        offerName: "No Delivery Charge",
-      },
-    ],
-  },
-];
+//   {
+//     type: "restaurant",
+//     cards: [
+//       {
+//         offerName: "50% off",
+//       },
+//       {
+//         offerName: "No Delivery Charge",
+//       },
+//     ],
+//   },
+// ];
 
 //Config Driven UI
 
