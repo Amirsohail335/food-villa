@@ -1,4 +1,4 @@
-import "./App.css";
+// import "./App.css";
 import React from "react";
 import { Title } from "./components/Header";
 import Header from "./components/Header";
@@ -6,32 +6,8 @@ import { ReactDOM } from "react-dom/client";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import RestrauntCard from "./components/RestrauntCard";
-
-// const config = [
-//   {
-//     type: "carousal",
-//     cards: [
-//       {
-//         offerName: "50% off",
-//       },
-//       {
-//         offerName: "No Delivery Charge",
-//       },
-//     ],
-//   },
-
-//   {
-//     type: "restaurant",
-//     cards: [
-//       {
-//         offerName: "50% off",
-//       },
-//       {
-//         offerName: "No Delivery Charge",
-//       },
-//     ],
-//   },
-// ];
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import About from "./components/About";
 
 //Config Driven UI
 
@@ -41,9 +17,22 @@ const AppLayout = () => {
       <Header />
       <Body />
       <Footer />
-      {/* <RestrauntList /> */}
+      <RestrauntCard />
     </React.Fragment>
   );
 };
 
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+]);
+
 export default AppLayout;
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(<RouterProvider router={appRouter} />);
