@@ -16,7 +16,7 @@ const AppLayout = () => {
     <React.Fragment>
       <Header />
       <Body />
-      <Footer />
+      {/* <Footer /> */}
       <RestrauntCard />
     </React.Fragment>
   );
