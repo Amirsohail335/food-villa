@@ -22,16 +22,16 @@ const AppLayout = () => {
   );
 };
 
-const appRouter = createBrowserRouter([
-  {
-    path: "/",
-    element: <AppLayout />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
-]);
+// const appRouter = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <AppLayout />,
+//   },
+//   {
+//     path: "/about",
+//     element: <About />,
+//   },
+// ]);
 
 export default AppLayout;
 // const root = ReactDOM.createRoot(document.getElementById("root"));
