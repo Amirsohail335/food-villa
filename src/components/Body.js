@@ -11,7 +11,7 @@ function filteredRestaurants(searchText) {
       .includes(searchText.toLowerCase());
   });
   console.log(data);
-  console.log(restaurantList);
+  // console.log(restaurantList);
 
   return data;
 }
