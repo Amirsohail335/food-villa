@@ -10,7 +10,7 @@ function filteredRestaurants(searchText) {
       .toLowerCase()
       .includes(searchText.toLowerCase());
   });
-  console.log(data);
+  // console.log(data);
   // console.log(restaurantList);
 
   return data;
