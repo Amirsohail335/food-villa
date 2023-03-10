@@ -20,10 +20,10 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [restaurants, setRestaurants] = useState(restaurantList);
 
-  useEffect(()=> {
-    // console.log("call this when dependecy is changed");
-    getRestaurants();
-  }, [])
+  // useEffect(()=> {
+  //   // console.log("call this when dependecy is changed");
+  //   getRestaurants();
+  // }, [])
 
   async function getRestaurants(){
     const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5709904&lng=77.07184079999999&page_type=DESKTOP_WEB_LISTING")
